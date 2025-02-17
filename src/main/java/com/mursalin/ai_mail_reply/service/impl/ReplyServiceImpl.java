@@ -23,6 +23,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     private final WebClient webClient;
 
+    @Autowired
     public ReplyServiceImpl(WebClient.Builder webClient) {
         this.webClient = webClient.build();
     }
