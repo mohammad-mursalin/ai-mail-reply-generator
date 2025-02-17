@@ -33,7 +33,7 @@ public class ReplyServiceImpl implements ReplyService {
         String prompt = generatePrompt(mailRequest).toString();
 
         Map<String, Object> requestBody =
-                Map.of("content", new Object[] {
+                Map.of("contents", new Object[] {
                     Map.of("parts", new Object[] {
                         Map.of("text", mailRequest.getMailBody())
                     })
