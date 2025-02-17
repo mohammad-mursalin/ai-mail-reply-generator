@@ -16,6 +16,7 @@ public class ReplyController {
         this.replyService = replyService;
     }
 
+    @PostMapping
     public String generateReply(@RequestBody MailRequest mailRequest) {
         return replyService.generateReply(mailRequest);
     }
