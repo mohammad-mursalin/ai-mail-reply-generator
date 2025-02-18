@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class MailRequest {
 
-    String mailBody;
+    String emailContent;
     String tone;
 }

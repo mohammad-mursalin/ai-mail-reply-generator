@@ -1,6 +1,5 @@
 package com.mursalin.ai_mail_reply.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mursalin.ai_mail_reply.dto.MailRequest;
@@ -37,7 +36,7 @@ public class ReplyServiceImpl implements ReplyService {
         Map<String, Object> requestBody =
                 Map.of("contents", new Object[] {
                     Map.of("parts", new Object[] {
-                        Map.of("text", mailRequest.getMailBody())
+                        Map.of("text", mailRequest.getEmailContent())
                     })
                 });
 
@@ -77,7 +76,7 @@ public class ReplyServiceImpl implements ReplyService {
         else
             prompt.append(mailRequest.getTone());
 
-        prompt.append("original email : ").append(mailRequest.getMailBody());
+        prompt.append("original email : ").append(mailRequest.getEmailContent());
 
         return prompt;
     }
